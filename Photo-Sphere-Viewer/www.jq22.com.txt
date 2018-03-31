@@ -1,0 +1,22 @@
+
+   jQuery²å¼þ¿â   
+
+   http://www.jq22.com 
+
+   ÕÒµÄ¸üÉÙ£¬×÷µÄ¸ü¶à£¡ jQuery²å¼þ¿âÖ»ÎªÄúÌá¹©×îºÃµÄ£¡
+		
+<p style="text-align: center;">
+				<a href="#" id="go">调用预定义的全景图</a>
+			</p>
+
+			<p>Note that the panorama is here given as a relative path, but you can give to Photo Sphere Viewer an absolute one or an URL pointing to another website if this website allows CORS.</p>
+
+			<p>通过下面的按钮你可以上传自己电脑上的全景图来查看效果。代码使用FileReader API，非常简单，可以查看<code>example1.js</code>文件。 </p>
+
+			<div id="your-pano"></div>
+
+			<form method="get" action="example1.html">
+				<p style="text-align: center;">
+					<input type="file" name="pano" id="pano" />
+				</p>
+			</form>
