@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+    <title>changecss</title>
+    <link href='' rel=stylesheet id='allStyle'>
+    
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body {
+            position: relative;
+        }
+        form {
+            position: absolute;
+            top: 0;
+            right: 0
+        }
+    </style>
+</head>
+<script type="text/javascript">
+    var ajax = new XMLHttpRequest();
+
+    ajax.open('get','http://5bfd36bf827c3800139ae909.mockapi.io/getcss');
+
+    ajax.send();
+
+    ajax.onreadystatechange = function () {
+    if (ajax.readyState==4 &&ajax.status==200) {
+
+    // 　　　　console.log(JSON.parse(ajax.responseText)[0].src);//输入相应的内容
+            const allStyle = document.querySelector('#allStyle');
+            allStyle.href = JSON.parse(ajax.responseText)[0].src;
+    　　}
+    }
+</script>
+<body>
+    <div id=app>
+    </div>
+    <form action='#' method="get" id='ajaxForm'>
+        <select name='id'>
+            <option value=0>第一种</option>
+            <option value=1>第二种</option>
+            <option value=2>第三种</option>
+        </select>
+        <input type='submit' />
+    </form>
+    <script type=text/javascript src=./static/js/manifest.2ae2e69a05c33dfc65f8.js></script>
+    <script type=text/javascript src=./static/js/vendor.ca2cbf1724e61e093f25.js></script>
+    <script type=text/javascript src=./static/js/app.c16cab513bc08a96e7b1.js></script>
+    <script type='text/javascript'>     
+    $(function () {
+        $(":submit").click(function (e) {
+            e.preventDefault();
+            $.get("http://5bfd36bf827c3800139ae909.mockapi.io/getcss",function (data) {
+                // console.log(data);
+                $('#allStyle').remove();
+                // const allStyle = document.querySelector('#allStyle');
+                // allStyle.setAttribute("href", data[+ $('select option:selected').val()].src);
+                const linkTag = $('<link href="' + data[+ $('select option:selected').val()].src + '" rel="stylesheet" id="allStyle" />');
+                // 请看清楚，是动态将link标签添加到head里   
+                $($('head')[0]).append(linkTag);
+                console.log(allStyle.href);
+            })
+            // var options = {
+            //     url: "http://5bfd36bf827c3800139ae909.mockapi.io/getcss",
+            //     success: function (data) {
+            //         console.log(data);
+            //     }
+            // };
+            // $("#ajaxForm").ajaxForm(options);
+        })
+
+
+    })   
+
+    </script>
+</body>
+</html>
