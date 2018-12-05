@@ -14,3 +14,8 @@
 5. 这样把路径依据项目id，存入服务器，在我每次请求之后，都获取这个css路径。
 6. 利用createElement来创建<link>来将这个css加入index.html中，以达到效果。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20181128103023140.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODM5ODY5OA==,size_16,color_FFFFFF,t_70)
+#### markdown编辑器
+1. 利用mditor封装好的插件
+2. 在create-react-app的框架中插入的小技巧demo
+3. 源码：
+> https://github.com/Houfeng/mditor/tree/master/packages/embed#%E5%B7%A5%E5%85%B7%E6%9D%A1%E9%85%8D%E7%BD%AE-api
